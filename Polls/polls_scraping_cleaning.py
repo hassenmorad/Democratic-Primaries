@@ -109,6 +109,7 @@ active_cols = ['Dates', 'Region', 'Pollster', 'Sample', 'Voter_Type', 'Pollster_
                'Gabbard', 'Klobuchar', 'Steyer', 'Poll_End_Date']
 scraped_data = scraped_data[active_cols]
 scraped_data = scraped_data.replace({'':-10}).fillna(-10)  # Temp replacement for missing values (in order to convert poll values to integers)
+scraped_data['Pollster_Grade'] = scraped_data['Pollster_Grade'].replace({-10:'Missing'})
 
 cand_cols = active_cols[6:-1]
 scraped_data[cand_cols] = scraped_data[cand_cols].astype(str)
