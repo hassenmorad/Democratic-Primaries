@@ -1,7 +1,7 @@
 # Analyzing Democratic Primary Polls
 
 This repository contains files collected & created while analyzing Democratic primary poll data. These are key questions I sought to answer in the articles below: 
-- Was calling landline numbers was the main method of reaching voters?
+- Was calling landline numbers the main method of reaching voters?
 - Did DNC approved polls differ from other polls in any significant ways?
 - How do candidates compare w/ regards to momentum in key metrics?
 
