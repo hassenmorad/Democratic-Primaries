@@ -118,8 +118,5 @@ scraped_data[cand_cols] = scraped_data[cand_cols].astype(str)
 for col in cand_cols:
     scraped_data[col] = scraped_data[col].apply(lambda x:x[:-1]).astype(int)
 
-national = scraped_data[scraped_data.Region == 'National']
-state = scraped_data[scraped_data.Region != 'National']
-
-national.to_csv('national_polls.csv', index=False)
-state.to_csv('state_polls.csv', index=False)
+scraped_data = scraped_data.sort_values(['Poll_End_Date', 'Pollster'], ascending=[False, True])
+scraped_data.to_csv('scraped_polls.csv', index=False)
