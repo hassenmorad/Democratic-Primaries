@@ -6,7 +6,8 @@ This repository contains files collected & created while analyzing Democratic pr
 - How do candidates compare w/ regards to momentum in key metrics?
 
 #### [Addressing the "Landline Only" Polling Myth](https://medium.com/@hassen.morad/addressing-the-landline-only-polling-myth-473dbb6d46bd?source=friends_link&sk=b4f11605e33fff99f8d1b93cf0ec27ea)
-#### Are DNC Approved Polls Chosen Fairly? (coming soon)
+#### Are DNC Approved Polls Biased? (coming soon)
+#### Democratic Candidates Momentum Tracker (coming soon)
 
 ## Workflow Summary:
 1. Collection
