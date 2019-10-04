@@ -1,15 +1,15 @@
 # Analyzing Democratic Primary Polls
 
-This repository contains files collected & created while analyzing Democratic primary poll data (all files related to polls are in the [polls](https://github.com/hassenmorad/Democratic-Primaries/tree/master/Polls) folder). These are some key questions I explored in the articles below: 
+This repository contains files collected & created while analyzing Democratic presidential primary data (all files related to polls are in the [polls](https://github.com/hassenmorad/Democratic-Primaries/tree/master/Polls) folder). These are some key questions I explored in the articles below: 
 - Was calling landline numbers the main method of reaching voters?
-- Did the DNC approved polls differ from other polls in any significant ways?
+- Are DNC polling criteria fair (analyzing DNC-approved polls)?
 - How do candidates compare w/ regards to momentum in key metrics?
 
 #### [Addressing the "Landline Only" Polling Myth](https://medium.com/@hassen.morad/addressing-the-landline-only-polling-myth-473dbb6d46bd?source=friends_link&sk=b4f11605e33fff99f8d1b93cf0ec27ea)
-#### Are DNC Approved Polls Biased? (coming soon)
+#### [Shedding Light on DNC-Approved Polls](https://medium.com/@hassen.morad/shedding-light-on-dnc-approved-polls-773947e464e3)
 #### Democratic Candidates Momentum Tracker (coming soon)
 
-## Workflow Summary:
+## Workflow Summary (for poll data):
 1. Collection
     - I scraped data from [FiveThirtyEight's](https://projects.fivethirtyeight.com/2020-primaries/democratic/) collection of primary poll data (**polls_scraping_cleaning.py**)
 2. Cleaning (in excel)
