@@ -13,70 +13,69 @@ soup = BeautifulSoup(response.text,'html.parser')
 
 states = soup.find_all('option')  # Also includes the National option element
 for state in states[1:]:  # Skipping the 1st of 2 National option elements)
-  state_url = state['value']
+    state_url = state['value']
 
-  # State (& National) URL
-  url = base_url + state_url
-  response = requests.get(url)
-  soup = BeautifulSoup(response.text,'html.parser')
-  state_name = soup.find('option', selected=True).text
+    # State (& National) URL
+    url = base_url + state_url
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text,'html.parser')
+    state_name = soup.find('option', selected=True).text
 
-  # Extracting table column headings
-  table_header = soup.find('thead')
-  cols = table_header.find_all('th')
-  columns = [col.get_text() for col in cols[1:]]  # Skipping first element (empty)
-  columns.insert(3, 'Voter_Type')
-  columns.insert(4, 'Pollster_Grade')
+    # Extracting table column headings
+    table_header = soup.find('thead')
+    cols = table_header.find_all('th')
+    columns = [col.get_text() for col in cols[1:]]  # Skipping first element (empty)
+    columns.insert(3, 'Voter_Type')
+    columns.insert(4, 'Pollster_Grade')
 
 
-  # Extracting row data
-  table_body = soup.find('tbody')
-  rows = table_body.find_all('tr', class_='visible-row')
+    # Extracting row data
+    table_body = soup.find('tbody')
+    rows = table_body.find_all('tr', class_='visible-row')
 
-  all_rows = []
-  for row in rows:
-    row_data = []
-    date = row.find('div', class_='date-wrapper').get_text()
-    pollster_name = row.find('div', class_='pollster-container').find_all('a')[-1].get_text()
-    sample_size = row.find('td', class_='sample').get_text()
-    voter_type = row.find('td', class_='sample-type').get_text()
-    pollster_grade = row.find('div', class_='gradeText')
-    poll_results = row.find_all('td', class_='hide-mobile value')
-    
-    # Extracting values for: date, pollster, sample size, voter type (which don't contain any missing values)
-    no_missing_list = []
-    non_poll_values = [date, pollster_name, sample_size, voter_type]
-    for non in non_poll_values:
-      no_missing_list.append(non)
+    all_rows = []
+    for row in rows:
+        row_data = []
+        date = row.find('div', class_='date-wrapper').get_text()
+        pollster_name = row.find('div', class_='pollster-container').find_all('a')[-1].get_text()
+        sample_size = row.find('td', class_='sample').get_text()
+        voter_type = row.find('td', class_='sample-type').get_text()
+        pollster_grade = row.find('div', class_='gradeText')
+        poll_results = row.find_all('td', class_='hide-mobile value')
+        
+        # Extracting values for: date, pollster, sample size, voter type (which don't contain any missing values)
+        no_missing_list = []
+        non_poll_values = [date, pollster_name, sample_size, voter_type]
+        for non in non_poll_values:
+            no_missing_list.append(non)
 
-    # Pollster grade 
-    grade_list = []
-    try:
-      value = pollster_grade.get_text()
-    except:
-      value = None
-    grade_list.append(value)
-    
-    
-    # Extracting poll results (for each candidate)
-    poll_list = []
-    for poll in poll_results:
-      try:
-        value = poll.get_text()
-      except:
-        value = None
-      poll_list.append(value)
+        # Pollster grade 
+        grade_list = []
+        try:
+            value = pollster_grade.get_text()
+        except:
+            value = None
+        grade_list.append(value)
+        
+        
+        # Extracting poll results (for each candidate)
+        poll_list = []
+        for poll in poll_results:
+            try:
+                value = poll.get_text()
+            except:
+                value = None
+            poll_list.append(value)
 
-    row_data += (no_missing_list + grade_list + poll_list)
-    all_rows.append(row_data)
+        row_data += (no_missing_list + grade_list + poll_list)
+        all_rows.append(row_data)
 
-  # Creating state DF
-  df = pd.DataFrame(all_rows)
-  df.columns = columns[:-1]
-  df['Region'] = np.full(len(df), state_name)  # Named it "Region" instead of "State" b/c national polls included as well
+    # Creating state DF
+    df = pd.DataFrame(all_rows)
+    df.columns = columns[:-1]
+    df['Region'] = np.full(len(df), state_name)  # Named it "Region" instead of "State" b/c national polls included as well
 
-  all_polls_df = pd.concat([all_polls_df, df], sort=False)
-# all_polls_df.to_csv('all_polls_df.csv', index=False)
+    all_polls_df = pd.concat([all_polls_df, df], sort=False)
 
 ##########################################################################################################################
 # *Cleaning Scraped Data
@@ -104,8 +103,8 @@ scraped_data['Poll_End_Date'] = pd.to_datetime(end_dates)
 scraped_data = scraped_data.sort_values('Poll_End_Date', ascending=False).reset_index(drop=True)    
 
 # Keeping active candidates only
-active_cols = ['Dates', 'Region', 'Pollster', 'Sample', 'Voter_Type', 'Pollster_Grade',  'Biden', 'Sanders', 'Harris', 
-               'Warren', 'Buttigieg', 'Booker', 'Yang', 'de Blasio', 'Williamson', "O'Rourke", 'Delaney', 'Castro',
+active_cols = ['Dates', 'Region', 'Pollster', 'Sample', 'Voter_Type', 'Pollster_Grade', 'Biden', 'Sanders', 'Harris', 
+               'Warren', 'Buttigieg', 'Booker', 'Yang', 'Williamson', "O'Rourke", 'Delaney', 'Castro',
                'Gabbard', 'Klobuchar', 'Steyer', 'Poll_End_Date']
 scraped_data = scraped_data[active_cols]
 scraped_data = scraped_data.replace({'':-10}).fillna(-10)  # Temp replacement for missing values (in order to convert poll values to integers)
