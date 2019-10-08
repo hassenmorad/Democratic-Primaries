@@ -1,6 +1,6 @@
 # Analyzing Democratic Primary Polls
 
-This repository contains files collected & created while analyzing Democratic presidential primary data (all files related to polls are in the [polls](https://github.com/hassenmorad/Democratic-Primaries/tree/master/Polls) folder). These are some key questions I explored in the articles below: 
+This repository contains files collected & created while analyzing Democratic presidential primary data (all files related to polls are in the [Polls](https://github.com/hassenmorad/Democratic-Primaries/tree/master/Polls) folder). These are some key questions I explored in the articles below: 
 - Was calling landline numbers the main method of reaching voters?
 - Are DNC polling criteria fair (analyzing DNC-approved polls)?
 - How do candidates compare w/ regards to momentum in key metrics?
