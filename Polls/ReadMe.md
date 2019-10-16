@@ -1,7 +1,7 @@
 # Analyzing Democratic Primary Polls:
 Issues Explored:
-- Are poll participants reached primarily through landline numbers?
-- Are the DNC's polling criteria fair?
+- Are poll participants reached primarily through landline numbers? ([Article](https://medium.com/@hassen.morad/addressing-the-landline-only-polling-myth-473dbb6d46bd))
+- Are the DNC's polling criteria fair? ([Article](https://medium.com/@hassen.morad/shedding-light-on-dnc-approved-polls-773947e464e3))
 
 ## Workflow Summary:
 1. Collection
