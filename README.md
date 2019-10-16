@@ -11,6 +11,7 @@ This repository contains files collected & created while analyzing Democratic pr
 #### Campaign Donations Mapping Analysis (in progress)
 #### Democratic Candidates Momentum Tracker (coming soon)
 
+
 ## Workflow Summary (for poll data):
 1. Collection
     - I scraped data from [FiveThirtyEight's](https://projects.fivethirtyeight.com/2020-primaries/democratic/) collection of primary poll data (**polls_scraping_cleaning.py**)
