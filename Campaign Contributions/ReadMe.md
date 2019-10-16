@@ -1,7 +1,7 @@
 # Mapping U.S. Race Demographics
 (project currently underway)
 This repository contains files collected & created while analyzing presidential campaign contributions. 
-It is built on a previous **[project mapping U.S. race demographics]**(https://github.com/hassenmorad/Race-Demographics).
+It is built on a previous **[project mapping U.S. race demographics](https://github.com/hassenmorad/Race-Demographics)**.
 
 A common way to measure a candidate's support among different demographics is to look at breakdowns in poll results. 
 Perhaps a more concrete indication of support can be found in its financial contributions.
