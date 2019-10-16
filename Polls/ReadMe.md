@@ -1,5 +1,5 @@
 # Analyzing Democratic Primary Polls:
-Explored two issues:
+Issues Explored:
 - Are poll participants reached primarily through landline numbers?
 - Are the DNC's polling criteria fair?
 
