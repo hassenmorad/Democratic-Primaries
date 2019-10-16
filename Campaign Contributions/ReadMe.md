@@ -5,10 +5,9 @@ It is built on a previous **[project mapping U.S. race demographics](https://git
 
 A common way to measure a candidate's support among different demographics is to look at breakdowns in poll results. 
 Perhaps a more concrete indication of support can be found in its financial contributions.
-I decided to explore this question by recreating this [map published by the New York Times](https://blog.mapbox.com/how-the-nyt-mapped-every-dollar-24ae4873ec78)
-with more recent donation data. Along with examining regional support, I added the layer of racial demographics to see if any interesting patterns emerged.
+I decided to explore this question by recreating a [map published by the New York Times](https://blog.mapbox.com/how-the-nyt-mapped-every-dollar-24ae4873ec78) with more recent donation data. Along with examining regional support, I added the layer of racial demographics to see if any interesting patterns emerged.
 
-Methodology for Measuring Support:
+Initial Methodology for Measuring Support:
 - Areas w/ over 40% of people from a certain race- total number of donations to candidate and/or total donation amount
 - Zip codes are probably too granular- need to determine county
 
