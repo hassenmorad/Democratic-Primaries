@@ -3,7 +3,7 @@
 This repository contains files collected & created while analyzing Democratic presidential primary data (all files related to polls are in the [Polls](https://github.com/hassenmorad/Democratic-Primaries/tree/master/Polls) folder). These are some key questions I explored in the articles below: 
 - Was calling landline numbers the main method of reaching voters?
 - Are DNC polling criteria fair (analyzing DNC-approved polls)?
-- Does mapping candidate donations reveal any patterns of greater support from certain races or regions?
+- Does mapping candidate donations reveal any patterns of support from certain racial groups or regions?
 - How do candidates compare w/ regards to momentum in key metrics?
 
 #### [Addressing the "Landline Only" Polling Myth](https://medium.com/@hassen.morad/addressing-the-landline-only-polling-myth-473dbb6d46bd?source=friends_link&sk=b4f11605e33fff99f8d1b93cf0ec27ea)
@@ -11,7 +11,7 @@ This repository contains files collected & created while analyzing Democratic pr
 #### Campaign Donations Mapping Analysis (in progress)
 #### Democratic Candidates Momentum Tracker (coming soon)
 
-
+--------------------------------------------------------------------
 ## Workflow Summary (for poll data):
 1. Collection
     - I scraped data from [FiveThirtyEight's](https://projects.fivethirtyeight.com/2020-primaries/democratic/) collection of primary poll data (**polls_scraping_cleaning.py**)
