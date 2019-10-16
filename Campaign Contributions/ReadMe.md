@@ -19,5 +19,6 @@ Methodology for Measuring Support:
     - [**Zip Code Boundaries Shapefile**](https://www.census.gov/programs-surveys/geography/guidance/geo-areas/zctas.html): for mapping in Mapbox.
     - **Campaign Donation Data**: FEC records of individual donations to Democratic presidential campaigns.
 2. Cleaning
-    - 
-3. Visualization- Mapped in Mapbox. Tutorial on steps taken is forthcoming.
+    - Jupyter Notebook
+3. Visualization
+    - Mapped in Mapbox. Tutorial on steps taken is forthcoming.
