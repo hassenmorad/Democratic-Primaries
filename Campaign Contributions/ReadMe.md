@@ -1,4 +1,4 @@
-# Mapping U.S. Race Demographics
+# Mapping Presidential Campaign Contributions
 (project currently underway)
 This repository contains files collected & created while analyzing presidential campaign contributions. 
 It is built on a previous **[project mapping U.S. race demographics](https://github.com/hassenmorad/Race-Demographics)**.
